@@ -6,6 +6,7 @@ provider "registry.terraform.io/docker/docker" {
   constraints = "~> 0.6.0"
   hashes = [
     "h1:ZSJ7CQ6EpSC8XEOU7Nx1amIssCfRSSH4MQ2TV+9GvMs=",
+    "h1:ukbFVeuDKvHxueJly6MZeRYZHWCpq275HfRo+55vOWI=",
     "zh:02ef1aef8bc36b87e7159f656b72d0fa3e1d197db1e15b906feea3187d5df02a",
     "zh:13d470ef5d9847ae7dc55ff9543c084177885fe74bd8fcafca07fc0d7c3764c3",
     "zh:7386c37ddc5dedd7dad8e2dd173756dfeb1e7c6e7857a0239512bc4433324713",
@@ -20,6 +21,7 @@ provider "registry.terraform.io/hashicorp/aws" {
   version     = "5.100.0"
   constraints = "~> 5.0"
   hashes = [
+    "h1:H3mU/7URhP0uCRGK8jeQRKxx2XFzEqLiOq/L2Bbiaxs=",
     "h1:edXOJWE4ORX8Fm+dpVpICzMZJat4AX0VRCAy/xkcOc0=",
     "zh:054b8dd49f0549c9a7cc27d159e45327b7b65cf404da5e5a20da154b90b8a644",
     "zh:0b97bf8d5e03d15d83cc40b0530a1f84b459354939ba6f135a0086c20ebbe6b2",
@@ -43,6 +45,7 @@ provider "registry.terraform.io/hashicorp/local" {
   version = "2.9.0"
   hashes = [
     "h1:9rBZCMNpxKwMlRbWH2QpwD3kqUCAejdOZQ/aiiDObXQ=",
+    "h1:px3Hpv/tL288wzu5knHywTTBcrydLnnGEiF/NIQBaRs=",
     "zh:0baa4566cf77f1ff52f4293d1c8536202dd23edc197c3196413a28343c3ac3a0",
     "zh:16b5559c3c07088ddad11a9bb9e9c0799999363c2958e9a5be2bcbbf2cd9ca64",
     "zh:197c79015a10d1cce904a8ea722cbc750c42aeae2da53f44a6a0751d9fd1aa90",

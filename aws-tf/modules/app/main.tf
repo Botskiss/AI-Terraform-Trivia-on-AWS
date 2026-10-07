@@ -11,12 +11,21 @@ resource "aws_ecr_repository" "this" {
 }
 
 
+# resource "terraform_data" "login" {
+#   provisioner "local-exec" {
+#     command = <<EOT
+#     docker login ${local.ecr_url} \
+#     --username ${local.ecr_token.user_name} \
+#     --password ${local.ecr_token.password}
+#     EOT
+#   }
+# }
+
+# Update your terraform_data resource in modules/app/main.tf to fetch the login token and pipe it into the Docker command.
 resource "terraform_data" "login" {
   provisioner "local-exec" {
     command = <<EOT
-    docker login ${local.ecr_url} \
-    --username ${local.ecr_token.user_name} \
-    --password ${local.ecr_token.password}
+      aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 863518460501.dkr.ecr.us-east-1.amazonaws.com
     EOT
   }
 }
