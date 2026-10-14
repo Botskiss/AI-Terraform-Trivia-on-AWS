@@ -6,7 +6,7 @@ COPY index.html .
 COPY script.js .
 
 
-ARG backend_url="mtc-ecs-lb-1724772738.us-east-1.elb.amazonaws.com"
+ARG backend_url="mtc-ecs-lb-1112379447.us-east-1.elb.amazonaws.com"
 
 
 
