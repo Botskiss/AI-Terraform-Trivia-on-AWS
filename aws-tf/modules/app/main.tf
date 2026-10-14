@@ -25,7 +25,7 @@ resource "aws_ecr_repository" "this" {
 resource "terraform_data" "login" {
   provisioner "local-exec" {
     command = <<EOT
-      aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 863518460501.dkr.ecr.us-east-1.amazonaws.com
+      aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin ${local.ecr_url}
     EOT
   }
 }
@@ -42,20 +42,32 @@ resource "terraform_data" "build" {
   }
 }
 
+# resource "terraform_data" "push" {
+#   triggers_replace = [
+#     var.image_version
+#   ]
+#   depends_on = [terraform_data.login, terraform_data.build]
+#   provisioner "local-exec" {
+#     command = <<EOT
+#     docker image tag ${local.ecr_url} ${local.ecr_url}:${var.image_version}
+#     docker image tag ${local.ecr_url} ${local.ecr_url}:latest
+#     docker image push ${local.ecr_url}:${var.image_version}
+#     docker image push ${local.ecr_url}:latest
+#     EOT
+#   }
+# }
+
 resource "terraform_data" "push" {
   triggers_replace = [
     var.image_version
   ]
   depends_on = [terraform_data.login, terraform_data.build]
+
   provisioner "local-exec" {
-    command = <<EOT
-    docker image tag ${local.ecr_url} ${local.ecr_url}:${var.image_version}
-    docker image tag ${local.ecr_url} ${local.ecr_url}:latest
-    docker image push ${local.ecr_url}:${var.image_version}
-    docker image push ${local.ecr_url}:latest
-    EOT
+    command = "docker image tag ${local.ecr_url} ${local.ecr_url}:${var.image_version} && docker image tag ${local.ecr_url} ${local.ecr_url}:latest && docker image push ${local.ecr_url}:${var.image_version} && docker image push ${local.ecr_url}:latest"
   }
 }
+
 
 resource "aws_ecs_task_definition" "this" {
   family                   = "${var.app_name}-task"
@@ -66,11 +78,13 @@ resource "aws_ecs_task_definition" "this" {
   execution_role_arn       = var.execution_role_arn
   container_definitions = jsonencode([
     {
-      name      = var.app_name
-      image     = "${local.ecr_url}:${var.image_version}"
-      cpu       = 256
-      memory    = 512
-      essential = true
+      name        = var.app_name
+      image       = "${local.ecr_url}:${var.image_version}"
+      cpu         = 256
+      memory      = 512
+      essential   = true
+      environment = var.envars
+      secrets     = var.secrets
       portMappings = [
         {
           containerport = var.port
@@ -115,6 +129,7 @@ resource "aws_lb_target_group" "this" {
 
 resource "aws_lb_listener_rule" "http_rule" {
   listener_arn = var.alb_listener_arn
+  priority     = var.lb_priority
   condition {
     path_pattern {
       values = [var.path_pattern]
