@@ -14,7 +14,7 @@ locals {
       port                = 80
       is_public           = true
       path_pattern        = "/*"
-      lb_priority          = 20
+      lb_priority         = 20
       healthcheck_path    = "/*"
       secrets             = [{}]
       envars              = [{}]
@@ -27,7 +27,7 @@ locals {
       port                = 5000
       is_public           = true
       path_pattern        = "/api/*"
-      lb_priority          = 10
+      lb_priority         = 10
       healthcheck_path    = "/api/healthcheck"
       secrets             = [{ name = "OPENAI_API_KEY", valueFrom = data.aws_secretsmanager_secret.openai_api_key.arn }]
       envars              = [{}]
