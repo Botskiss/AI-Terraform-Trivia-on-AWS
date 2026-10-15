@@ -15,7 +15,7 @@
 
 ---
 
-## 📸 Project Overview
+## Project Overview
 To create a trivia website that retrieves questions from OpenAI and provides feedback according to your answer. 
 
 ---
@@ -42,16 +42,33 @@ The solution includes:
 ![Architectural_Diagram](https://github.com/Botskiss/AI-Terraform-Trivia-on-AWS/blob/main/Images/MTC-Terraform-Quiz-AI-Diagram.jpg)
 
 ---
-## Steps Performed
-1. Create the modules for the infra and app.
+## Screenshots of the Terraform codes in VSCode on local machine
+<br>
+App --> Main.tf 
+
+![App Main.tf](https://github.com/Botskiss/AI-Terraform-Trivia-on-AWS/blob/main/Images/MTC-Terraform-Quiz-AI-7.jpg) 
+
+Infra --> Main.tf 
+
+![Infra Main.tf](https://github.com/Botskiss/AI-Terraform-Trivia-on-AWS/blob/main/Images/MTC-Terraform-Quiz-AI-8.jpg) 
+
+Main.tf 
+
+![Main.tf](https://github.com/Botskiss/AI-Terraform-Trivia-on-AWS/blob/main/Images/MTC-Terraform-Quiz-AI-9.jpg) 
+
+AWS S3 for Remote Backend  
+
+![Remote Backend](https://github.com/Botskiss/AI-Terraform-Trivia-on-AWS/blob/main/Images/MTC-Terraform-Quiz-AI-10-backend.jpg) 
+
 
 ---
-## Final Result
+## 📸 Final Result
 At the end of this project, I have:
 
-* Multiple EC2 instances configured consistently using Ansible.  
-* A web application deployed without manual intervention.  
-* Hands-on experience with real configuration management workflows.
+* A Terraform Trivia Website that retreives answer and provides feedback using OpenAI.  
+* A website that is built using Terraform as IaC.  
+* Fully automated the website. I just need to run terraform plan and terraform approve on my local machine and it will only take minutes to build everything. The same is true if I don't need the website running. I can just run terraform destroy and it will delete all resources to prevent accumulating unnecessary costs in AWS and OpenAI when the website is not in use.
+
 <br>
 <br>
 Website's user interface
@@ -74,3 +91,11 @@ The OpenAI agent checks the answer and provides feedback
 <br>
 
 ![Terraform Trivia Website1](https://github.com/Botskiss/AI-Terraform-Trivia-on-AWS/blob/main/Images/MTC-Terraform-Quiz-AI-5.jpg)
+
+<br>
+<br>
+<br>
+<br>
+The website is not always up to save costs in AWS and OpenAI. Please message me on LinkedIn if you want to see and test the website and I will fire it up using Terraform on my local computer. Thank you for reading! :) 
+
+
