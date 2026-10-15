@@ -1,4 +1,4 @@
-# 🚀 (DRAFT) Terraform Trivia Website with AI on AWS
+# 🚀 Terraform Trivia Website with AI on AWS
 
 ## Services Used 🛠
 * **Terraform** - Infrastructure as Code tool  
