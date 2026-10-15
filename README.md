@@ -10,4 +10,5 @@
 * **AWS ECS**
 * **AWS Secrets Manager**
 * **AWS ALB**
+* **Docker** 
 * **OpenAI**
