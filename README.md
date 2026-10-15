@@ -39,6 +39,8 @@ The solution includes:
 --- 
 ## ✨ Architectural Diagram
 
+This is a standard AWS ECS deployment. This deployment has a VPC, security groups, public subnets, an an application load balancer. It also uses availability zones, ECS Cluster, and ECR Fargate. 
+
 ![Architectural_Diagram](https://github.com/Botskiss/AI-Terraform-Trivia-on-AWS/blob/main/Images/MTC-Terraform-Quiz-AI-Diagram.jpg)
 
 ---
