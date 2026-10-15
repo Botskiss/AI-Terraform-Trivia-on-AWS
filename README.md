@@ -16,7 +16,7 @@
 ---
 
 ## 📸 Project Overview
-To create a trivia website that retrieves questions and answers from OpenAI. 
+To create a trivia website that retrieves questions from OpenAI and provides feedback according to your answer. 
 
 ---
 ## Role as a DevOps Engineer
@@ -53,9 +53,24 @@ At the end of this project, I have:
 * A web application deployed without manual intervention.  
 * Hands-on experience with real configuration management workflows.
 <br>
+<br>
+Website's user interface
+<br>
 
 ![Terraform Trivia Website1](https://github.com/Botskiss/AI-Terraform-Trivia-on-AWS/blob/main/Images/MTC-Terraform-Quiz-AI-3.jpg)
+
 <br>
+
+Testing by inputting an answer.
+
+<br>
+
 ![Terraform Trivia Website1](https://github.com/Botskiss/AI-Terraform-Trivia-on-AWS/blob/main/Images/MTC-Terraform-Quiz-AI-4.jpg)
+
 <br>
+
+The OpenAI agent checks the answer and provides feedback
+
+<br>
+
 ![Terraform Trivia Website1](https://github.com/Botskiss/AI-Terraform-Trivia-on-AWS/blob/main/Images/MTC-Terraform-Quiz-AI-5.jpg)
