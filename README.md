@@ -10,3 +10,4 @@
 * **AWS ECS**
 * **AWS Secrets Manager**
 * **AWS ALB**
+* **OpenAI**
